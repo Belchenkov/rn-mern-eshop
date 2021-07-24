@@ -1,0 +1,23 @@
+{
+  "name": "rn_mern_eshop_api",
+  "version": "1.0.0",
+  "description": "Build E-Shop Mobile App with Admin Panel and Authentication using React Native, Expo, Redux, Context API, Express.js & MongoDB (API)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "Express",
+    "Node.js",
+    "MongoDB"
+  ],
+  "author": "Aleksey Belchenkov",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
