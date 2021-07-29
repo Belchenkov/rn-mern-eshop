@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -24,6 +25,15 @@ app.get(`${API_PREFIX}/products`, (req, res) => {
    return res.send(product);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running ${API_URL}:${PORT}`);
-});
+mongoose.connect(process.env.DB_URL, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true
+    }).then(() => {
+            console.log('Connect to DB :)');
+
+            app.listen(PORT, () => {
+                console.log(`Server is running ${API_URL}:${PORT}`);
+            });
+    }).catch(err => {
+        console.error(err);
+    });
